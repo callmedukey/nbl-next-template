@@ -11,14 +11,8 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.config({
-    extends: [
-      "next/core-web-vitals",
-      "next/typescript",
-      "standard",
-      "plugin:tailwindcss/recommended",
-      "prettier",
-    ],
-    plugins: ["import"],
+    extends: ["next/core-web-vitals", "next/typescript"],
+    plugins: ["import", "unused-imports"],
     rules: {
       "import/order": [
         "error",
@@ -47,12 +41,16 @@ const eslintConfig = [
         },
       ],
     },
-    ignorePatterns: ["components/ui/**"],
+    ignorePatterns: ["components/ui/**", "components/magicui/**"],
     overrides: [
       {
         files: ["*.ts", "*.tsx"],
         rules: {
           "no-undef": "off",
+          "@typescript-eslint/no-unused-vars": "error",
+          "unused-imports/no-unused-imports": "error",
+          "unused-imports/no-unused-vars": "error",
+          "@typescript-eslint/no-explicit-any": "off",
         },
       },
     ],
