@@ -1,5 +1,6 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
+
 import { FlatCompat } from "@eslint/eslintrc";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -32,6 +33,11 @@ const eslintConfig = [
               group: "external",
               position: "after",
             },
+            {
+              pattern: "@db/seed/**",
+              group: "external",
+              position: "after",
+            },
           ],
           pathGroupsExcludedImportTypes: ["builtin"],
           alphabetize: {
@@ -44,13 +50,13 @@ const eslintConfig = [
     ignorePatterns: ["components/ui/**", "components/magicui/**"],
     overrides: [
       {
-        files: ["*.ts", "*.tsx"],
+        files: ["*.ts", "*.tsx", "db/seed/*.ts", "db/seed/**/*.ts"],
         rules: {
           "no-undef": "off",
           "@typescript-eslint/no-unused-vars": "error",
           "unused-imports/no-unused-imports": "error",
           "unused-imports/no-unused-vars": "error",
-          "@typescript-eslint/no-explicit-any": "off",
+          "@typescript-eslint/no-explicit-any": "warn",
         },
       },
     ],
