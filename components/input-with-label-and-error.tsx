@@ -13,7 +13,7 @@ export default function InputWithLabelAndError({
 }: {
   label: string;
   name: string;
-  placeholder: string;
+  placeholder?: string;
   error: string | undefined;
   type: string;
   defaultValue?: string;

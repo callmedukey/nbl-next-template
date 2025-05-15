@@ -15,7 +15,7 @@ export default function PasswordWithLabelAndError({
 }: {
   label: string;
   name: string;
-  placeholder: string;
+  placeholder?: string;
   error: string | undefined;
   defaultValue?: string;
 }) {
