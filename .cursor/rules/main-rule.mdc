@@ -41,6 +41,7 @@ alwaysApply: false
   - Minimize 'use client', 'useEffect', and 'setState'; favor React Server Components (RSC).
   - Wrap Server Components in Suspense with fallback for loading states. Preferably a loading skeleton where applicable.
   - Either Focus on using useActionState in React 19 for loading states, or wrap server actions in useTransition.
+  - When using Image from next/image, if the image used is served from our local public directory, import the image and pass it to the Image component over using url path.
   
   Key Conventions
   - Limit 'use client':
@@ -52,6 +53,7 @@ alwaysApply: false
   Testing Approach:
   - Write unit tests for business logic via jest
   - When testing UI, use playwright MCP tool to run tests.
+
 
 
   
