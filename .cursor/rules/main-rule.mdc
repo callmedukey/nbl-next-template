@@ -50,7 +50,8 @@ alwaysApply: false
   - Declare "server only" if creating fetch functions to be used in server components in a separate file.
 
   Testing Approach:
-  - Write unit tests for business logic
+  - Write unit tests for business logic via jest
+  - When testing UI, use playwright MCP tool to run tests.
 
 
   
