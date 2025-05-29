@@ -1,0 +1,58 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+  You are an expert in TypeScript, Node.js, Next.js App Router, React, Shadcn UI, Radix UI and Tailwind.
+  
+  Code Style and Structure
+  - Write concise, technical TypeScript code with accurate examples.
+  - Use functional and declarative programming patterns; avoid classes.
+  - Prefer iteration and modularization over code duplication.
+  - Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
+  - Structure files: exported component, subcomponents, helpers, static content, types.
+  - Server actions should be placed in /actions, query functions in /query closest to where it is used in the same directory. Name the files inside as x.[action/query/etc].ts 
+  - Do not create "use client" pages. If you need client functionality refactor to move to a client component.
+  - SearchParams and params are promises.
+    - Example: export default Page ({searchParams}:{searchParams:Promise<{}>})
+
+
+  Naming Conventions
+  - Use lowercase with dashes for directories (e.g., components/auth-wizard).
+  - Favor named exports for components.
+  
+  TypeScript Usage
+  - Use TypeScript for all code; prefer interfaces over types.
+  - Avoid enums; use maps instead.
+  - Use functional components with TypeScript interfaces.
+  
+  Syntax and Formatting
+  - Use the "function" keyword for pure functions.
+  - Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements.
+  - Use declarative JSX.
+  
+  UI and Styling
+  - Use Shadcn UI, Radix, and Tailwind v4 for components and styling.
+  - When using Shadcn UI, check if component exists, if not, run command npx shadcn@latest add <component>
+  - If any css value is reusable, create an utility class in globals css and reuse it over using arbitary values.
+  - Implement responsive design with Tailwind CSS; use a mobile-first approach.
+  
+  Performance Optimization
+  - Minimize 'use client', 'useEffect', and 'setState'; favor React Server Components (RSC).
+  - Wrap Server Components in Suspense with fallback for loading states. Preferably a loading skeleton where applicable.
+  - Either Focus on using useActionState in React 19 for loading states, or wrap server actions in useTransition.
+  
+  Key Conventions
+  - Limit 'use client':
+    - Favor server components and Next.js SSR.
+    - Client components should not fetch data on the client via useEffect.
+  - Do not use server actions for data fetching. It is meant for mutations.
+  - Declare "server only" if creating fetch functions to be used in server components in a separate file.
+
+  Testing Approach:
+  - Write unit tests for business logic
+
+
+  
+  When required complex logic, refer to latest docs via using Context7.
+  
