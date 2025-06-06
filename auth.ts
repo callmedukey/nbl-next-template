@@ -17,13 +17,11 @@ declare module "next-auth" {
       id: string;
       email: string;
       name: string;
-      nickname: string;
       username: string;
       gender: Gender | undefined;
       birthday: Date;
       country: string;
       role: Role;
-      hasPaidSubscription: boolean;
     } & DefaultSession["user"];
   }
 
@@ -33,11 +31,9 @@ declare module "next-auth" {
     username?: string | null;
     email?: string | null;
     role?: Role;
-    nickname?: string | null;
     gender?: Gender | null;
     birthday?: Date | null;
     country?: string | null;
-    hasPaidSubscription?: boolean;
   }
 }
 
